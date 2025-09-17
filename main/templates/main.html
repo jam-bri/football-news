@@ -1,8 +1,3 @@
-<!-- <h1>Football News</h1> <h4>NPM: </h4> <p>2506561555</p>  <h4>Name: </h4>
-<p>Berguegou Briana Yadjam</p> 
-<h4>Class: </h4>
-<p>PBP KI</p> 
--->
 {% extends 'base.html' %}
 {% block content %}
 <h1>Football News</h1>
@@ -16,10 +11,21 @@
 <h5>Class:</h5>
 <p>{{ class }}</p>
 
+
 <a href="{% url 'main:create_news' %}">
   <button>+ Add News</button>
 </a>
-
+<a href="{% url 'main:logout' %}">
+  <button>Logout</button>
+</a>
+<h5>Last login session: {{ last_login }}</h5>
+<hr>
+<a href="?filter=all">
+    <button type="button">All Articles</button>
+</a>
+<a href="?filter=my">
+    <button type="button">My Articles</button>
+</a> 
 <hr>
 
 {% if not news_list %}
